@@ -5,7 +5,7 @@ from django.http  import HttpResponse
 
 # Create your views here.
 def gallery(request):
-    return HttpResponse(request,'home.html')
+    return render(request,'gallery/home.html')
 
 
 
