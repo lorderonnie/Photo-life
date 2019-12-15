@@ -21,7 +21,11 @@
   padding-top: 60px; 
   transition: 0.5s; 
 }
-
+body{
+    background-image:url(https://wallpapers.moviemania.io/phone/movie/322/f1a64a/mystic-river-phone-wallpaper.jpg?w=1536&h=2732);
+    background-size:cover;
+        
+}
 
 .sidebar a {
   padding: 8px 8px 8px 32px;
@@ -67,14 +71,7 @@
 }
 </style>
 <body>
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#"></a>
-  <a href="#"></a>
-  <a href="#"></a>
-  <a href="#"></a>
-</div>
- <div >
+<div style="float:right;" >
     <form class="navbar-form" role="search" action="{% url 'search_results' %}">
 
       <div class="input-group">
@@ -85,7 +82,13 @@
       </div>
 
     </form>
-      </div>
+</div>
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Contacts</a>
+</div>
+ 
 <div id="main">
   <button class="openbtn" onclick="openNav()">&#9776; Open Me</button>
 </div>

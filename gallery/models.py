@@ -27,7 +27,7 @@ class Location(models.Model):
         return self.location_name
     
 class Photos(models.Model):
-    image= models.ImageField(upload_to = 'photos/')
+    image= models.ImageField(upload_to = 'home/')
     name = models.CharField(max_length =60)
     description = models.TextField()
     location = models.ManyToManyField(Location)
