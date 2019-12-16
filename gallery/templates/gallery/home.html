@@ -11,14 +11,237 @@
         top:4%;
         left:75%;
     }
+    h3{
+        text-align:center;
+        color:white;
+        font-size:30px;
+        margin-top:150px 
+    }
     body{
         background-image:url(https://www.hd-freewallpapers.com/latest-wallpapers/moon%20-shadow-%20on%20-river%20-wallpaper%20-download.jpg);
         background-size:cover;
-        
     }
+    .box{
+    width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 15px;
+    margin-left: 170px ;
+    margin-top:100px ;
+  }
+  .from{
+    width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 15px;
+    margin-left: 170px ;
+    margin-top:100px ;
+  }
+  .card{
+    position: relative;
+    width: 280px;
+    height: 310px;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+  }
+  .card:before,
+  .card:after
+  {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    background: #fff;
+    transition: 0.5s;
+    z-index:-1;
+  }
+  .card:hover:before{
+  transform: rotate(20deg);
+  box-shadow: 0 2px 20px rgba(0,0,0,.2);
+  }
+  .card:hover:after{
+  transform: rotate(10deg);
+  box-shadow: 0 2px 20px rgba(0,0,0,.2);
+  }
+  .card .imgBx{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  background: #222;
+  transition: 0.5s;
+  z-index: 1;
+  }
+  
+  .card:hover .imgBx
+  {
+    bottom: 80px;
+  }
+
+  .card .imgBx img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .card .details{
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      height: 60px;
+      text-align: center;
+  }
+
+  .card .details h2{
+   margin: 0;
+   padding: 0;
+   font-weight: 600;
+   font-size: 20px;
+   color: #777;
+   text-transform: uppercase;
+  } 
+    p{
+        color:black;
+    }
+  .card .details h2 span{
+  font-weight: 500;
+  font-size: 16px;
+  color: #f38695;
+  display: block;
+  margin-top: 5px;
+   } 
+   .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
 </style>
 <body>
 <h1>PHOTOLIFE</h1>
+ <div class="box">
+ 
+      <div class="card">
+        <div class="imgBx">
+            <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
+        </div>
+        <div class="details">
+            <h2>Photography<br><span>Stone face<p>Studio in France</p></span></h2>
+        <input type="link" value="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id="myInput">
+        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
+        </div>
+      </div>
+    
+       <div class="card">
+         <div class="imgBx">
+            <img src="https://images.unsplash.com/photo-1549417229-aa67d3263c09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
+         </div>
+         <div class="details">
+            <h2>Photography<br><span>reading the paper<p>Hibiscus B&B spain</p></span></h2>
+           <input type="link" value="https://images.unsplash.com/photo-1549417229-aa67d3263c09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id="myInput">
+        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
+          </div>
+       </div>
 
+       <div class="card">
+         <div class="imgBx">
+            <img src="https://images.unsplash.com/photo-1548094878-84ced0f6896d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
+         </div>
+         <div class="details">
+            <h2>Photography<br><span>A touch of nature<p>Black Forest Germany</p></span></h2>
+           <input type="link" value="https://images.unsplash.com/photo-1548094878-84ced0f6896d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id="myInput">
+        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
+          </div>
+          
+       </div>
+  </div>
+  <div class= "from">
+    <div class="card">
+         <div class="imgBx">
+            <img src="https://www.wallpaperflare.com/static/197/649/185/nature-landscape-waterfall-river-wallpaper.jpg" alt="images">
+         </div>
+         <div class="details">
+            <h2>Nature<br><span>Natures beauty<p>Crooked Forest Poland</p></span></h2>
+           <input type="link" value="https://www.wallpaperflare.com/static/197/649/185/nature-landscape-waterfall-river-wallpaper.jpg" id="myInput">
+        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
+          </div>
+          
+    </div>
+     <div class="card">
+         <div class="imgBx">
+            <img src="https://wallpapercave.com/wp/wp2563177.jpg" alt="images">
+         </div>
+         <div class="details">
+            <h2>Nature<br><span>Pride of the Mountains<p>MT Kilimanjaro Tanzania</p></span></h2>
+           <input type="link" value="https://wallpapercave.com/wp/wp2563177.jpg" id="myInput">
+        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
+          </div>
+          
+    </div>
+     <div class="card">
+         <div class="imgBx">
+            <img src="https://wallpaperplay.com/walls/full/9/4/8/125143.jpg" alt="images">
+         </div>
+         <div class="details">
+            <h2>Nature<br><span>Whispers from the forest<p>Daintree forest Australia</p></span></h2>
+           <input type="link" value="https://wallpaperplay.com/walls/full/9/4/8/125143.jpg" id="myInput">
+        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
+          </div>
+          
+    </div>
+  </div>
 </body>
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); 
+
+  document.execCommand("copy");
+
+  alert("Copied the text: " + copyText.value);
+}
+</script>
 {% endblock %}
