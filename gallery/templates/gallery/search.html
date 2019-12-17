@@ -1,25 +1,38 @@
 {% extends 'gallery/base.html'%} 
 {% block content %}
+<style>
+body{
+    background-image:url(https://www.hd-freewallpapers.com/latest-wallpapers/moon%20-shadow-%20on%20-river%20-wallpaper%20-download.jpg);
+        background-size:cover;
+
+}
+h2{
+    color:silver;
+    font-size:50px;
+}
+</style>
+<body>
 <div class="container">
 
   <div class="row">
-    {% if category%}
-      <h2>Found {{ category|length }} of searched term {{message}}</h2>
+    {% if name%}
+      <h2>Found {{ name|length }} of searched term {{message}}</h2>
     {% else %}
-      <h2> Found 0 cateories for the search term {{message}}</h2>
+      <h2> Found 0 names for the search term {{message}}</h2>
     {% endif %}
 
   </div>
 
   <div class="row">
 
-  {% if category %}
-    {% for category in categories %}
+  {% if name %}
+    {% for name in name %}
       <div class="col-sm-6 col-md-3">
-          <h1>{{category.title}}</h1>
+          <h1>{{name.title}}</h1>
       </div>
     {% endfor %}
   {% endif %}
   </div>
 </div>
+</body>
 {% endblock %}

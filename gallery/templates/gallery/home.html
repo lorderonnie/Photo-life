@@ -1,12 +1,13 @@
 {% extends 'gallery/base.html'%}
 
-
+{{block.super}}
 {% block content%}
 <style>
     h1{
         text-align:right;
         font-size:50px;
         color:grey;
+        font-family: 'Girassol', cursive;
         position:absolute;
         top:4%;
         left:75%;
@@ -21,26 +22,53 @@
         background-image:url(https://www.hd-freewallpapers.com/latest-wallpapers/moon%20-shadow-%20on%20-river%20-wallpaper%20-download.jpg);
         background-size:cover;
     }
-    .box{
+ 
+  #place{
     width: 1100px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 15px;
     margin-left: 170px ;
-    margin-top:100px ;
+    margin-top:100px ;  
   }
-  .from{
-    width: 1100px;
+ 
+  .ronnie{
+    width:280px;
+    height:310px;
+    border-radius: 4px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2)
+    position:absolute;
+    right:40%;
+  }
+  #position{
+    position:absolute;
+    top:30%;
+    right:57%;
+  }
+  #clear{
+    margin-top:250px;
+    margin-left:16px;
+  }
+h4{
+  font-size:30px;
+  color:black;
+}
+h5{
+   font-size:20px;
+  color:black;
+} 
+ .box{
+    width: 1200px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     grid-gap: 15px;
-    margin-left: 170px ;
-    margin-top:100px ;
+    margin: 0 auto;
+    padding:15px 15px;
   }
   .card{
     position: relative;
-    width: 280px;
-    height: 310px;
+    width: 300px;
+    height: 330px;
     background: #fff;
     margin: 0 auto;
     border-radius: 4px;
@@ -110,9 +138,7 @@
    color: #777;
    text-transform: uppercase;
   } 
-    p{
-        color:black;
-    }
+
   .card .details h2 span{
   font-weight: 500;
   font-size: 16px;
@@ -120,122 +146,68 @@
   display: block;
   margin-top: 5px;
    } 
-   .tooltip {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 140px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -75px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
 </style>
 <body>
 <h1>PHOTOLIFE</h1>
- <div class="box">
- 
-      <div class="card">
-        <div class="imgBx">
-            <img src="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
-        </div>
-        <div class="details">
-            <h2>Photography<br><span>Stone face<p>Studio in France</p></span></h2>
-        <input type="link" value="https://images.unsplash.com/photo-1532123675048-773bd75df1b4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id="myInput">
-        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
+  {% for photo in photos %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="card">
+            <div class="imgBx">
+                <img src="{{photo.image.url}}" alt="images">
+            </div>
+            <button type="button" id="clear" class="btn btn-primary"style="background-color:black;" data-toggle="modal" data-target="#myModal{{photo.id}}">More</button>
+
+            <div class="details">
+                <h2>{{photo.name}}<br><span><b>{{photo.location}}</b><br>{{photo.description}}</span></h2>
+            </div>
+          </div>
         </div>
       </div>
-    
-       <div class="card">
-         <div class="imgBx">
-            <img src="https://images.unsplash.com/photo-1549417229-aa67d3263c09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
-         </div>
-         <div class="details">
-            <h2>Photography<br><span>reading the paper<p>Hibiscus B&B spain</p></span></h2>
-           <input type="link" value="https://images.unsplash.com/photo-1549417229-aa67d3263c09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id="myInput">
-        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
-          </div>
-       </div>
+    </div>
+  </div>
+  {% endfor %}
+  {% for photo in photos %}
+<div class="">
 
-       <div class="card">
-         <div class="imgBx">
-            <img src="https://images.unsplash.com/photo-1548094878-84ced0f6896d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="images">
-         </div>
-         <div class="details">
-            <h2>Photography<br><span>A touch of nature<p>Black Forest Germany</p></span></h2>
-           <input type="link" value="https://images.unsplash.com/photo-1548094878-84ced0f6896d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" id="myInput">
-        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
-          </div>
-          
-       </div>
+  <!-- Trigger the modal with a button -->
+<div id="position" >
+</div>
+<!-- Modal -->
+<div id="myModal{{photo.id}}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{photo.name}}</h4>
+      </div>
+      <div class="modal-body">
+         <img src="{{photo.image.url}}" width="400px" height="400px"alt="photos">
+        <h5>Category:{{photo.category}}</h5>
+        <h5>Location:{{photo.location}}</h5>
+        <p>Description:{{photo.description}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <input type="text" value="{{photo.image.url}}" id="myInput">
+      <button class="btn btn-success"  onclick="myFunction()">Copy text</button>
+      </div>
+    </div>
+
   </div>
-  <div class= "from">
-    <div class="card">
-         <div class="imgBx">
-            <img src="https://www.wallpaperflare.com/static/197/649/185/nature-landscape-waterfall-river-wallpaper.jpg" alt="images">
-         </div>
-         <div class="details">
-            <h2>Nature<br><span>Natures beauty<p>Crooked Forest Poland</p></span></h2>
-           <input type="link" value="https://www.wallpaperflare.com/static/197/649/185/nature-landscape-waterfall-river-wallpaper.jpg" id="myInput">
-        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
-          </div>
-          
-    </div>
-     <div class="card">
-         <div class="imgBx">
-            <img src="https://wallpapercave.com/wp/wp2563177.jpg" alt="images">
-         </div>
-         <div class="details">
-            <h2>Nature<br><span>Pride of the Mountains<p>MT Kilimanjaro Tanzania</p></span></h2>
-           <input type="link" value="https://wallpapercave.com/wp/wp2563177.jpg" id="myInput">
-        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
-          </div>
-          
-    </div>
-     <div class="card">
-         <div class="imgBx">
-            <img src="https://wallpaperplay.com/walls/full/9/4/8/125143.jpg" alt="images">
-         </div>
-         <div class="details">
-            <h2>Nature<br><span>Whispers from the forest<p>Daintree forest Australia</p></span></h2>
-           <input type="link" value="https://wallpaperplay.com/walls/full/9/4/8/125143.jpg" id="myInput">
-        <button class="btn btn-primary" onclick="myFunction()">Copy text</button>
-          </div>
-          
-    </div>
-  </div>
+</div>
+</div>
+
+   {% endfor %}
+
 </body>
 <script>
 function myFunction() {
   var copyText = document.getElementById("myInput");
-
   copyText.select();
   copyText.setSelectionRange(0, 99999); 
 

@@ -13,10 +13,6 @@ class Pictionary(models.Model):
 
 class Category(models.Model):
     category_name = models.CharField(max_length =70)
-    @classmethod
-    def search_by_category(cls,search_term):
-        photos = cls.objects.filter(title__icontains=search_term)
-        return photos
     
     def __str__(self):
         return self.category_name
@@ -41,12 +37,24 @@ class Location(models.Model):
         self.save()
         
 class Photos(models.Model):
-    image= models.ImageField(upload_to = 'home/')
+    image= models.ImageField(upload_to ='home/')
     name = models.CharField(max_length =60)
     description = models.TextField()
     location =  models.ForeignKey(Location,on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
-    photographer =  models.CharField(max_length =60)
     
+    @classmethod
+    def search_by_name(cls,search_term):
+        photos = cls.objects.filter(name__icontains=search_term)
+        return photos
     
+    @classmethod
+    def all_photos(cls):
+        photos = cls.objects.all()
+        return photos
+    
+    def save_photo(self):
+        self.save()
+        
+        
     
