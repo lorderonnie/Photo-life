@@ -4,8 +4,8 @@
 ## Description
     This is a project based on displaying pictures of any form using Modals and also cards .This is app shows images and other photography set pieces in a beautiful starndard way.
 ## Setup/Installation Requirements
-* A database for Python
-* 
+* A database for Python and access to Django3
+* WI-FI or bundles to access the internet
 * 
 * 
 * 
