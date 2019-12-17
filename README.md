@@ -20,6 +20,9 @@ CSS/HTML:Used to style and create the frame work of the project
 INSTALLATIONS USED:
 1:pip install Pillow
 2:pip install psycopg2
+3:pip install django-bootstrap3
+4: python3 -m pip install django --no-cache-dir
+5:pip install -r requirements.txt 
 ## Support and contact details
 {Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}
 ### License
