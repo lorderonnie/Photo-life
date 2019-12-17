@@ -6,10 +6,8 @@
 ## Setup/Installation Requirements
 * A database for Python and access to Django3
 * WI-FI or bundles to access the internet
-* 
-* 
-* 
-
+* Access to git hub and clone this link to see the code:
+* Heroku account to deploy or see the page it self
 ## Known Bugs
 {Are there issues that have not yet been resolved that you want to let users know you know? Outline any issues that would impact use of your application. Share any workarounds that are in place. }
 ## Technologies Used
