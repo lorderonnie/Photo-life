@@ -1,0 +1,1 @@
+web: gunicorn photolife.wsgi --log-file -
