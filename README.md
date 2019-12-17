@@ -10,8 +10,16 @@
 * Heroku account to deploy or see the page it self
 ## Known Bugs
  None so far.
-## Technologies Used
-{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}
+## Technologies Used  
+PYTHON3.6-Used to basically run the program
+
+DJANGO3:Used to make functions and run the admin
+
+CSS/HTML:Used to style and create the frame work of the project
+
+INSTALLATIONS USED:
+1:pip install Pillow
+2:pip install psycopg2
 ## Support and contact details
 {Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}
 ### License
