@@ -2,7 +2,7 @@
 #### This is a simple gallery built to display images and where they were taken ,17 December 2019 
 #### By **RONALD MWAMBIA**
 ## Description
-
+    This is a project based on displaying pictures of any form using Modals and also cards .This is app shows images and other photography set pieces in a beautiful starndard way.
 ## Setup/Installation Requirements
 * This is a great place
 * to list setup instructions
